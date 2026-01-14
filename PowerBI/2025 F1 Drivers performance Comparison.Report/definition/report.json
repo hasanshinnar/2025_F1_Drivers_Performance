@@ -1,0 +1,106 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/report/3.0.0/schema.json",
+  "themeCollection": {
+    "baseTheme": {
+      "name": "CY25SU11",
+      "reportVersionAtImport": {
+        "visual": "2.4.0",
+        "report": "3.0.0",
+        "page": "2.3.0"
+      },
+      "type": "SharedResources"
+    }
+  },
+  "objects": {
+    "section": [
+      {
+        "properties": {
+          "verticalAlignment": {
+            "expr": {
+              "Literal": {
+                "Value": "'Top'"
+              }
+            }
+          }
+        }
+      }
+    ]
+  },
+  "resourcePackages": [
+    {
+      "name": "SharedResources",
+      "type": "SharedResources",
+      "items": [
+        {
+          "name": "CY25SU11",
+          "path": "BaseThemes/CY25SU11.json",
+          "type": "BaseTheme"
+        }
+      ]
+    },
+    {
+      "name": "RegisteredResources",
+      "type": "RegisteredResources",
+      "items": [
+        {
+          "name": "Redbull_Oracle_Racing2455148535592081.png",
+          "path": "Redbull_Oracle_Racing2455148535592081.png",
+          "type": "Image"
+        },
+        {
+          "name": "F1_Logo14242778692559044.png",
+          "path": "F1_Logo14242778692559044.png",
+          "type": "Image"
+        },
+        {
+          "name": "Max-Verstappen-F1-20236863445496225523.png",
+          "path": "Max-Verstappen-F1-20236863445496225523.png",
+          "type": "Image"
+        },
+        {
+          "name": "netherlands-flag-png-xl15219379594526072.png",
+          "path": "netherlands-flag-png-xl15219379594526072.png",
+          "type": "Image"
+        },
+        {
+          "name": "landonorris7054862381844464.png",
+          "path": "landonorris7054862381844464.png",
+          "type": "Image"
+        },
+        {
+          "name": "960px-Flag_of_the_United_Kingd8359649077222733.png",
+          "path": "960px-Flag_of_the_United_Kingd8359649077222733.png",
+          "type": "Image"
+        },
+        {
+          "name": "images9574686363724606.png",
+          "path": "images9574686363724606.png",
+          "type": "Image"
+        },
+        {
+          "name": "wgp7v7174077510122670984678381512.png",
+          "path": "wgp7v7174077510122670984678381512.png",
+          "type": "Image"
+        },
+        {
+          "name": "wgp7v7174077510118632258383816547.png",
+          "path": "wgp7v7174077510118632258383816547.png",
+          "type": "Image"
+        },
+        {
+          "name": "Oscar_Piastri7381269577619232.png",
+          "path": "Oscar_Piastri7381269577619232.png",
+          "type": "Image"
+        }
+      ]
+    }
+  ],
+  "settings": {
+    "useStylableVisualContainerHeader": true,
+    "exportDataMode": "AllowSummarized",
+    "defaultDrillFilterOtherVisuals": true,
+    "allowChangeFilterTypes": true,
+    "useEnhancedTooltips": true,
+    "useDefaultAggregateDisplayName": true
+  }
+}

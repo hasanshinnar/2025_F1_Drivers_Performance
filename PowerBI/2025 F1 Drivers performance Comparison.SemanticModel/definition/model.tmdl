@@ -1,0 +1,35 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-AE
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBI_QueryOrder = ["verstappen_2025_development","Norris_2025_development","Piastri_2025_development","Norris_Results","Verstappen_Results","Piastri_Results","RaceID"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table verstappen_2025_development
+ref table DateTableTemplate_5254bd07-2b71-4554-9149-3dac91f35163
+ref table Verstappen_Results
+ref table LocalDateTable_179032ba-b099-405f-96b7-8ad72ac36ade
+ref table LocalDateTable_229fe3ae-4e0c-40c6-af38-cdef6e630257
+ref table LocalDateTable_c514ca06-55bb-4400-a078-8acf52a829db
+ref table Norris_2025_development
+ref table LocalDateTable_5d71cd80-aad4-492e-ab8b-f0101f473ec9
+ref table LocalDateTable_341be63d-0729-4ac6-bba0-a877608e86da
+ref table Norris_Results
+ref table LocalDateTable_802e3f88-cb5b-4447-90b8-be5e4752005b
+ref table Piastri_2025_development
+ref table LocalDateTable_b9283fb6-570d-4b6e-ad17-1d4e7ab8ec06
+ref table LocalDateTable_9be8f1e4-8b4b-4001-a3c7-4da41fd57d6e
+ref table Piastri_Results
+ref table LocalDateTable_9b23c281-872c-4f82-afd2-daa43035339c
+ref table RaceID
+ref table LocalDateTable_0d6085ef-e33b-4439-b7e3-cad159169047
+
+ref cultureInfo en-US
+

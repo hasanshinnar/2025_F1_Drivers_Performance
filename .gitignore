@@ -1,0 +1,5 @@
+**/.pbi/localSettings.json
+**/.pbi/cache.abf
+f1_cache/
+*.ff1pkl
+*.sqlite

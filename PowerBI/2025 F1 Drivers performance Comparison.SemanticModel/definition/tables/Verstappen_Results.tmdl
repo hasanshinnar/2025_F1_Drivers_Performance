@@ -1,0 +1,79 @@
+table Verstappen_Results
+	lineageTag: cd06bb3e-afa8-4aa4-bb5e-99ad6ed5e641
+
+	column RaceName
+		dataType: string
+		lineageTag: f830c230-fee6-49b9-b21b-a87198a626c4
+		summarizeBy: none
+		sourceColumn: RaceName
+		sortByColumn: EventDate
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column EventDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 26b5a3bd-09ed-4588-a74f-087de82ec655
+		summarizeBy: none
+		sourceColumn: EventDate
+
+		variation Variation
+			isDefault
+			relationship: 21ff5ee5-795b-43e7-af97-d6229a775ffe
+			defaultHierarchy: LocalDateTable_179032ba-b099-405f-96b7-8ad72ac36ade.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Position
+		dataType: string
+		lineageTag: 82b3ba31-bf14-4447-a8b5-1035f095a16c
+		summarizeBy: none
+		sourceColumn: Position
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinishPosition
+		dataType: int64
+		formatString: 0
+		lineageTag: be445334-b1f9-429b-88cb-6b8a58a51dd4
+		summarizeBy: sum
+		sourceColumn: FinishPosition
+
+		annotation SummarizationSetBy = Automatic
+
+	column Points
+		dataType: int64
+		formatString: 0
+		lineageTag: 75c96fa7-6a90-4756-b194-3ce3972062c0
+		summarizeBy: sum
+		sourceColumn: Points
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Verstappen_Results = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\PC\PycharmProjects\F1_2025_Top3\verstappen_2025_development.csv"),[Delimiter=",", Columns=36, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Time", type text}, {"Driver", type text}, {"DriverNumber", Int64.Type}, {"LapTime", type number}, {"LapNumber", Int64.Type}, {"Stint", Int64.Type}, {"PitOutTime", type text}, {"PitInTime", type text}, {"Sector1Time", type number}, {"Sector2Time", type number}, {"Sector3Time", type number}, {"Sector1SessionTime", type text}, {"Sector2SessionTime", type text}, {"Sector3SessionTime", type text}, {"SpeedI1", Int64.Type}, {"SpeedI2", Int64.Type}, {"SpeedFL", Int64.Type}, {"SpeedST", Int64.Type}, {"IsPersonalBest", type logical}, {"Compound", type text}, {"TyreLife", Int64.Type}, {"FreshTyre", type logical}, {"Team", type text}, {"LapStartTime", type text}, {"LapStartDate", type datetime}, {"TrackStatus", Int64.Type}, {"Position", Int64.Type}, {"Deleted", type logical}, {"DeletedReason", type text}, {"FastF1Generated", type logical}, {"IsAccurate", type logical}, {"RaceName", type text}, {"EventDate", type date}, {"Round", Int64.Type}, {"FinishPosition", Int64.Type}, {"Points", Int64.Type}}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"FastF1Generated"}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Removed Columns",{"Time", "Driver", "DriverNumber", "LapTime", "LapNumber", "Stint", "PitOutTime", "PitInTime", "Sector1Time", "Sector2Time", "Sector3Time", "Sector1SessionTime", "Sector2SessionTime", "Sector3SessionTime", "SpeedI1", "SpeedI2", "SpeedFL", "SpeedST", "IsPersonalBest", "Compound", "TyreLife", "FreshTyre", "Team", "LapStartTime", "LapStartDate", "TrackStatus", "Deleted", "DeletedReason", "IsAccurate", "RaceName", "EventDate", "Round", "Position", "FinishPosition", "Points"}),
+				    #"Removed Columns1" = Table.RemoveColumns(#"Reordered Columns",{"Driver", "DriverNumber"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Removed Columns1", {"RaceName"}),
+				    #"Removed Columns2" = Table.RemoveColumns(#"Removed Duplicates",{"LapTime", "LapNumber", "Stint", "PitOutTime", "PitInTime", "Sector1Time", "Sector2Time", "Sector3Time", "Sector1SessionTime", "Sector2SessionTime", "Sector3SessionTime", "SpeedI1", "SpeedI2", "SpeedFL", "SpeedST", "IsPersonalBest", "Compound", "TyreLife", "FreshTyre", "Team", "LapStartTime", "LapStartDate", "Deleted", "TrackStatus", "DeletedReason", "IsAccurate", "Round", "Time"}),
+				    #"Sorted Rows" = Table.Sort(#"Removed Columns2",{{"EventDate", Order.Ascending}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Sorted Rows",null,"0",Replacer.ReplaceValue,{"Position"})
+				in
+				    #"Replaced Value"
+
+	changedProperty = Name
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

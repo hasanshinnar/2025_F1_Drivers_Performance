@@ -1,0 +1,77 @@
+relationship 21ff5ee5-795b-43e7-af97-d6229a775ffe
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Verstappen_Results.EventDate
+	toColumn: LocalDateTable_179032ba-b099-405f-96b7-8ad72ac36ade.Date
+
+relationship 94fe89dc-9b98-4d26-b917-491080933fb7
+	joinOnDateBehavior: datePartOnly
+	fromColumn: verstappen_2025_development.LapStartDate
+	toColumn: LocalDateTable_229fe3ae-4e0c-40c6-af38-cdef6e630257.Date
+
+relationship dfdaefb8-401f-48b4-9b70-22b7b76b133d
+	joinOnDateBehavior: datePartOnly
+	fromColumn: verstappen_2025_development.EventDate
+	toColumn: LocalDateTable_c514ca06-55bb-4400-a078-8acf52a829db.Date
+
+relationship AutoDetected_a635c970-9e3f-4bee-b2b1-10264334068f
+	fromColumn: verstappen_2025_development.RaceName
+	toColumn: Verstappen_Results.RaceName
+
+relationship dbb20f38-66b8-4e58-95a0-4c85f3077b5c
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Norris_2025_development.LapStartDate
+	toColumn: LocalDateTable_5d71cd80-aad4-492e-ab8b-f0101f473ec9.Date
+
+relationship 7e84c0aa-9dba-492b-8585-561bc0da6a0a
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Norris_2025_development.EventDate
+	toColumn: LocalDateTable_341be63d-0729-4ac6-bba0-a877608e86da.Date
+
+relationship 7dad0fae-c169-4dca-90c1-df8a31a0672e
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Norris_Results.EventDate
+	toColumn: LocalDateTable_802e3f88-cb5b-4447-90b8-be5e4752005b.Date
+
+relationship 3ee45dce-70e1-46dc-9885-745a4f20d825
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Piastri_2025_development.LapStartDate
+	toColumn: LocalDateTable_b9283fb6-570d-4b6e-ad17-1d4e7ab8ec06.Date
+
+relationship 974f5423-a2e9-407a-b750-04e0d629ffc4
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Piastri_2025_development.EventDate
+	toColumn: LocalDateTable_9be8f1e4-8b4b-4001-a3c7-4da41fd57d6e.Date
+
+relationship 158a2ae7-86fa-4737-87d2-34872797ab48
+	joinOnDateBehavior: datePartOnly
+	fromColumn: Piastri_Results.EventDate
+	toColumn: LocalDateTable_9b23c281-872c-4f82-afd2-daa43035339c.Date
+
+relationship 1e212c70-a839-4284-9811-d6dfdd23e8ec
+	joinOnDateBehavior: datePartOnly
+	fromColumn: RaceID.EventDate
+	toColumn: LocalDateTable_0d6085ef-e33b-4439-b7e3-cad159169047.Date
+
+relationship f54bdeb8-83ac-1d9c-e41a-0b6f5cec3119
+	fromColumn: verstappen_2025_development.RaceName
+	toColumn: RaceID.RaceName
+
+relationship 56c7a1d7-0ff4-7c7c-e09a-a14e2b798995
+	fromColumn: Piastri_2025_development.RaceName
+	toColumn: RaceID.RaceName
+
+relationship 05361a0b-1823-f618-a8c2-4b6ebcaff87b
+	isActive: false
+	fromColumn: Piastri_2025_development.RaceName
+	toColumn: Piastri_Results.RaceName
+
+relationship 755c4cb6-bc34-1254-e63b-c8787b9929fb
+	crossFilteringBehavior: bothDirections
+	fromCardinality: one
+	fromColumn: Norris_Results.RaceName
+	toColumn: RaceID.RaceName
+
+relationship 0dee92c2-e17a-a3d4-a924-06a616a748d2
+	fromColumn: Norris_2025_development.RaceName
+	toColumn: RaceID.RaceName
+

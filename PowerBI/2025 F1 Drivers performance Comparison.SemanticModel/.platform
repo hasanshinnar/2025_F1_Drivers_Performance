@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "2025 F1 Drivers performance Comparison"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "ea4b1789-d719-4f55-acf4-a6dfb922fd4e"
+  }
+}

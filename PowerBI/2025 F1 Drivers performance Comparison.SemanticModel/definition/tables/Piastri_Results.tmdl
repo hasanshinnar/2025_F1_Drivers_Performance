@@ -1,0 +1,79 @@
+table Piastri_Results
+	lineageTag: 9f0bfaf8-bddf-44e5-bbee-77051dc48085
+
+	column RaceName
+		dataType: string
+		lineageTag: 44014644-45f1-46c5-a9c6-f7daf33dae40
+		summarizeBy: none
+		sourceColumn: RaceName
+		sortByColumn: EventDate
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column EventDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8387caab-3c73-42f0-8d0e-31c8efce7cf0
+		summarizeBy: none
+		sourceColumn: EventDate
+
+		variation Variation
+			isDefault
+			relationship: 158a2ae7-86fa-4737-87d2-34872797ab48
+			defaultHierarchy: LocalDateTable_9b23c281-872c-4f82-afd2-daa43035339c.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Position
+		dataType: int64
+		formatString: 0
+		lineageTag: c1a695bb-46ab-4ace-940e-6bc1f5d9d9f9
+		summarizeBy: sum
+		sourceColumn: Position
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinishPosition
+		dataType: int64
+		formatString: 0
+		lineageTag: 7bfd2762-508f-4e31-9dea-0e57c7019040
+		summarizeBy: sum
+		sourceColumn: FinishPosition
+
+		annotation SummarizationSetBy = Automatic
+
+	column Points
+		dataType: int64
+		formatString: 0
+		lineageTag: 60b7e1f3-4690-4632-b410-7f9d4007e328
+		summarizeBy: sum
+		sourceColumn: Points
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Piastri_Results = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\PC\PycharmProjects\F1_2025_Top3\Piastri_2025_development.csv"),[Delimiter=",", Columns=36, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Time", type text}, {"Driver", type text}, {"DriverNumber", Int64.Type}, {"LapTime", type number}, {"LapNumber", Int64.Type}, {"Stint", Int64.Type}, {"PitOutTime", type text}, {"PitInTime", type text}, {"Sector1Time", type number}, {"Sector2Time", type number}, {"Sector3Time", type number}, {"Sector1SessionTime", type text}, {"Sector2SessionTime", type text}, {"Sector3SessionTime", type text}, {"SpeedI1", Int64.Type}, {"SpeedI2", Int64.Type}, {"SpeedFL", Int64.Type}, {"SpeedST", Int64.Type}, {"IsPersonalBest", type logical}, {"Compound", type text}, {"TyreLife", Int64.Type}, {"FreshTyre", type logical}, {"Team", type text}, {"LapStartTime", type text}, {"LapStartDate", type datetime}, {"TrackStatus", Int64.Type}, {"Position", Int64.Type}, {"Deleted", type logical}, {"DeletedReason", type text}, {"FastF1Generated", type logical}, {"IsAccurate", type logical}, {"RaceName", type text}, {"EventDate", type date}, {"Round", Int64.Type}, {"FinishPosition", Int64.Type}, {"Points", Int64.Type}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type", "FreshTyre", "FreshTyre - Copy"),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Duplicated Column",{{"FreshTyre - Copy", Int64.Type}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type1",0,2,Replacer.ReplaceValue,{"FreshTyre - Copy"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Replaced Value",{{"FreshTyre - Copy", "d_FreshTyre"}}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Renamed Columns",{"Time", "Driver", "DriverNumber", "LapTime", "LapNumber", "Stint", "PitOutTime", "PitInTime", "Sector1Time", "Sector2Time", "Sector3Time", "Sector1SessionTime", "Sector2SessionTime", "Sector3SessionTime", "SpeedI1", "SpeedI2", "SpeedFL", "SpeedST", "IsPersonalBest", "Compound", "TyreLife", "FreshTyre", "d_FreshTyre", "Team", "LapStartTime", "LapStartDate", "TrackStatus", "Position", "Deleted", "DeletedReason", "FastF1Generated", "IsAccurate", "RaceName", "EventDate", "Round", "FinishPosition", "Points"}),
+				    #"Removed Columns" = Table.RemoveColumns(#"Reordered Columns",{"Time", "Driver", "DriverNumber", "LapTime", "LapNumber", "Stint", "PitOutTime", "PitInTime", "Sector1Time", "Sector2Time", "Sector3Time", "Sector1SessionTime", "Sector2SessionTime", "Sector3SessionTime", "SpeedI1", "SpeedI2", "SpeedFL", "SpeedST", "IsPersonalBest", "Compound", "TyreLife", "FreshTyre", "d_FreshTyre", "Team", "LapStartTime", "LapStartDate", "TrackStatus", "Deleted", "DeletedReason", "FastF1Generated", "IsAccurate", "Round"}),
+				    #"Reordered Columns1" = Table.ReorderColumns(#"Removed Columns",{"RaceName", "EventDate", "Position", "FinishPosition", "Points"}),
+				    #"Removed Duplicates" = Table.Distinct(#"Reordered Columns1", {"RaceName"})
+				in
+				    #"Removed Duplicates"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

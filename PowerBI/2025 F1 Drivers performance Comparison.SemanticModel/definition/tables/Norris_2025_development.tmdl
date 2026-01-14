@@ -1,0 +1,399 @@
+table Norris_2025_development
+	lineageTag: 1b9bed03-2ff4-4983-b5c6-ea2bfcde6ef4
+
+	measure 'Measure 2'
+		lineageTag: ca0b556d-96ab-40c1-b1b2-0524410e54fb
+
+		annotation 43dbc3e8-3a1c-4b6f-9923-b49ff7d6691c = True
+
+	measure Norris_Sum_Of_Points =
+			
+			CALCULATE(
+				SUM('Norris_2025_development'[Points]),
+				ALL('Norris_2025_development'[RaceName])
+			)
+		formatString: 0
+		lineageTag: 05d319ae-0af7-4dbd-8131-9de918ecf880
+
+	measure LandoTotalPoints =
+			
+			SUMX(VALUES('Norris_2025_development'[RaceName]),MAX('Norris_2025_development'[Points]))
+		formatString: 0
+		lineageTag: a007cf12-7b02-4cd3-9eb5-8463ba6934d4
+
+	column Time
+		dataType: string
+		lineageTag: 1ed3a130-8ab2-4c2f-8384-ddab1af7c280
+		summarizeBy: none
+		sourceColumn: Time
+
+		annotation SummarizationSetBy = Automatic
+
+	column Driver
+		dataType: string
+		lineageTag: 1446fbfb-6254-4314-8a43-10bce2413a58
+		summarizeBy: none
+		sourceColumn: Driver
+
+		annotation SummarizationSetBy = Automatic
+
+	column DriverNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 52f4e6b0-91b7-4225-bbae-cbadb22bcee1
+		summarizeBy: sum
+		sourceColumn: DriverNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column LapTime
+		dataType: double
+		lineageTag: c6b07536-0f01-4fa1-845e-6165529a0f01
+		summarizeBy: sum
+		sourceColumn: LapTime
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column LapNumber
+		dataType: int64
+		formatString: 0
+		lineageTag: 6535a030-c415-430c-b690-715fa1d29bbd
+		summarizeBy: sum
+		sourceColumn: LapNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Stint
+		dataType: int64
+		formatString: 0
+		lineageTag: 70970fff-0c95-4c99-b79a-a21df0a7a1c0
+		summarizeBy: sum
+		sourceColumn: Stint
+
+		annotation SummarizationSetBy = Automatic
+
+	column PitOutTime
+		dataType: string
+		lineageTag: 9a0f341a-9195-4711-ac2a-b1a7a38b95e6
+		summarizeBy: none
+		sourceColumn: PitOutTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column PitInTime
+		dataType: string
+		lineageTag: 5c6db962-0514-4cda-a41a-bc0a913cf219
+		summarizeBy: none
+		sourceColumn: PitInTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sector1Time
+		dataType: double
+		lineageTag: 73af479a-aae8-4878-a372-61a5ec967904
+		summarizeBy: sum
+		sourceColumn: Sector1Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sector2Time
+		dataType: double
+		lineageTag: 40e88fe0-a6ba-4b54-9eb9-4ff55aea51ff
+		summarizeBy: sum
+		sourceColumn: Sector2Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sector3Time
+		dataType: double
+		lineageTag: 8b64d888-44f9-4e6a-87a4-11599061eae2
+		summarizeBy: sum
+		sourceColumn: Sector3Time
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Sector1SessionTime
+		dataType: string
+		lineageTag: 9e2a2096-44c5-464b-adcc-736662c5c2be
+		summarizeBy: none
+		sourceColumn: Sector1SessionTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sector2SessionTime
+		dataType: string
+		lineageTag: 5aed51c9-6b8a-493d-bc1d-55be0450f8fd
+		summarizeBy: none
+		sourceColumn: Sector2SessionTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sector3SessionTime
+		dataType: string
+		lineageTag: 6c9503ef-9bd7-4ddd-b5d5-a67170b116bb
+		summarizeBy: none
+		sourceColumn: Sector3SessionTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpeedI1
+		dataType: int64
+		formatString: 0
+		lineageTag: 677402b8-ede5-4ee9-ba8d-2756bd5e05c5
+		summarizeBy: sum
+		sourceColumn: SpeedI1
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpeedI2
+		dataType: int64
+		formatString: 0
+		lineageTag: 97f4c98e-be76-4183-806b-589804c9bec7
+		summarizeBy: sum
+		sourceColumn: SpeedI2
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpeedFL
+		dataType: int64
+		formatString: 0
+		lineageTag: 55d8cdfe-dc3e-42bf-80b9-efa7c89cf689
+		summarizeBy: sum
+		sourceColumn: SpeedFL
+
+		annotation SummarizationSetBy = Automatic
+
+	column SpeedST
+		dataType: double
+		formatString: 0
+		lineageTag: 87a44f7a-184e-4063-829e-8c11f27af8e9
+		summarizeBy: sum
+		sourceColumn: SpeedST
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsPersonalBest
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 91aede30-f888-4ed4-b63f-ac95dc5b33ab
+		summarizeBy: none
+		sourceColumn: IsPersonalBest
+
+		annotation SummarizationSetBy = Automatic
+
+	column Compound
+		dataType: string
+		lineageTag: 4cd7e9e1-f092-48c8-adcb-a99f10b1c053
+		summarizeBy: none
+		sourceColumn: Compound
+
+		annotation SummarizationSetBy = Automatic
+
+	column TyreLife
+		dataType: int64
+		formatString: 0
+		lineageTag: 7863013e-5412-4c0b-ae71-8bfebcd1ef30
+		summarizeBy: sum
+		sourceColumn: TyreLife
+
+		annotation SummarizationSetBy = Automatic
+
+	column FreshTyre
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: fd43230e-5376-4b26-8c0b-9a0d99acac13
+		summarizeBy: none
+		sourceColumn: FreshTyre
+
+		annotation SummarizationSetBy = Automatic
+
+	column d_FreshTyre
+		dataType: int64
+		lineageTag: d53c8f9d-6bb3-4e15-b583-379424a841fb
+		summarizeBy: sum
+		sourceColumn: d_FreshTyre
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Team
+		dataType: string
+		lineageTag: 8e23809c-03ee-4053-acbe-06fc143a4741
+		summarizeBy: none
+		sourceColumn: Team
+
+		annotation SummarizationSetBy = Automatic
+
+	column LapStartTime
+		dataType: string
+		lineageTag: d5bbe72f-d679-403a-a7d3-cbf2c733f1f9
+		summarizeBy: none
+		sourceColumn: LapStartTime
+
+		annotation SummarizationSetBy = Automatic
+
+	column LapStartDate
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f4e482f5-be55-42fe-962b-a895974b45c8
+		summarizeBy: none
+		sourceColumn: LapStartDate
+
+		variation Variation
+			isDefault
+			relationship: dbb20f38-66b8-4e58-95a0-4c85f3077b5c
+			defaultHierarchy: LocalDateTable_5d71cd80-aad4-492e-ab8b-f0101f473ec9.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+	column TrackStatus
+		dataType: int64
+		formatString: 0
+		lineageTag: e00e0191-9bd7-45a1-84e5-9d36fb2e5ed8
+		summarizeBy: sum
+		sourceColumn: TrackStatus
+
+		annotation SummarizationSetBy = Automatic
+
+	column Position
+		dataType: int64
+		formatString: 0
+		lineageTag: f8e8f0ca-babd-407f-9752-ea3bf05dee99
+		summarizeBy: sum
+		sourceColumn: Position
+
+		annotation SummarizationSetBy = Automatic
+
+	column Deleted
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7126b8ea-22fe-4fb6-bd3d-da80de7ad04d
+		summarizeBy: none
+		sourceColumn: Deleted
+
+		annotation SummarizationSetBy = Automatic
+
+	column DeletedReason
+		dataType: string
+		lineageTag: 39e47a5f-c654-44f4-8751-1e8a0fed0044
+		summarizeBy: none
+		sourceColumn: DeletedReason
+
+		annotation SummarizationSetBy = Automatic
+
+	column FastF1Generated
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 7764d47e-3f33-4a73-9a89-317b4b487881
+		summarizeBy: none
+		sourceColumn: FastF1Generated
+
+		annotation SummarizationSetBy = Automatic
+
+	column IsAccurate
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 3b257b4f-52d9-47fd-83b1-77947fe6262e
+		summarizeBy: none
+		sourceColumn: IsAccurate
+
+		annotation SummarizationSetBy = Automatic
+
+	column RaceName
+		dataType: string
+		lineageTag: 7c7ee46c-ec4a-493b-a955-cae3855cf4ca
+		summarizeBy: none
+		sourceColumn: RaceName
+		sortByColumn: EventDate
+
+		changedProperty = SortByColumn
+
+		annotation SummarizationSetBy = Automatic
+
+	column EventDate
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 490d10e7-fc6b-484f-bc6f-87242765ae12
+		summarizeBy: none
+		sourceColumn: EventDate
+
+		variation Variation
+			isDefault
+			relationship: 7e84c0aa-9dba-492b-8585-561bc0da6a0a
+			defaultHierarchy: LocalDateTable_341be63d-0729-4ac6-bba0-a877608e86da.'Date Hierarchy'
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Round
+		dataType: int64
+		formatString: 0
+		lineageTag: bb9febf2-b424-4ef7-8a16-652106de4a0d
+		summarizeBy: sum
+		sourceColumn: Round
+
+		annotation SummarizationSetBy = Automatic
+
+	column FinishPosition
+		dataType: int64
+		formatString: 0
+		lineageTag: 7c15a066-29c4-4c5b-9d22-781028b03e0c
+		summarizeBy: sum
+		sourceColumn: FinishPosition
+
+		annotation SummarizationSetBy = Automatic
+
+	column Points
+		dataType: int64
+		formatString: 0
+		lineageTag: 126a4b9f-f32a-485a-8008-e42bd18c4d93
+		summarizeBy: sum
+		sourceColumn: Points
+
+		annotation SummarizationSetBy = Automatic
+
+	column d_InPit
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 6b099da5-6a57-43e9-b3ec-b27ebf40d534
+		summarizeBy: none
+		sourceColumn: d_InPit
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Norris_2025_development = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(File.Contents("C:\Users\PC\PycharmProjects\F1_2025_Top3\Norris_2025_development.csv"),[Delimiter=",", Columns=36, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Time", type text}, {"Driver", type text}, {"DriverNumber", Int64.Type}, {"LapTime", type number}, {"LapNumber", Int64.Type}, {"Stint", Int64.Type}, {"PitOutTime", type text}, {"PitInTime", type text}, {"Sector1Time", type number}, {"Sector2Time", type number}, {"Sector3Time", type number}, {"Sector1SessionTime", type text}, {"Sector2SessionTime", type text}, {"Sector3SessionTime", type text}, {"SpeedI1", Int64.Type}, {"SpeedI2", Int64.Type}, {"SpeedFL", Int64.Type}, {"SpeedST", Int64.Type}, {"IsPersonalBest", type logical}, {"Compound", type text}, {"TyreLife", Int64.Type}, {"FreshTyre", type logical}, {"Team", type text}, {"LapStartTime", type text}, {"LapStartDate", type datetime}, {"TrackStatus", Int64.Type}, {"Position", Int64.Type}, {"Deleted", type logical}, {"DeletedReason", type text}, {"FastF1Generated", type logical}, {"IsAccurate", type logical}, {"RaceName", type text}, {"EventDate", type date}, {"Round", Int64.Type}, {"FinishPosition", Int64.Type}, {"Points", Int64.Type}}),
+				    #"Duplicated Column" = Table.DuplicateColumn(#"Changed Type", "FreshTyre", "FreshTyre - Copy"),
+				    #"Changed Type1" = Table.TransformColumnTypes(#"Duplicated Column",{{"FreshTyre - Copy", Int64.Type}}),
+				    #"Replaced Value" = Table.ReplaceValue(#"Changed Type1",0,2,Replacer.ReplaceValue,{"FreshTyre - Copy"}),
+				    #"Renamed Columns" = Table.RenameColumns(#"Replaced Value",{{"FreshTyre - Copy", "d_FreshTyre"}}),
+				    #"Reordered Columns" = Table.ReorderColumns(#"Renamed Columns",{"Time", "Driver", "DriverNumber", "LapTime", "LapNumber", "Stint", "PitOutTime", "PitInTime", "Sector1Time", "Sector2Time", "Sector3Time", "Sector1SessionTime", "Sector2SessionTime", "Sector3SessionTime", "SpeedI1", "SpeedI2", "SpeedFL", "SpeedST", "IsPersonalBest", "Compound", "TyreLife", "FreshTyre", "d_FreshTyre", "Team", "LapStartTime", "LapStartDate", "TrackStatus", "Position", "Deleted", "DeletedReason", "FastF1Generated", "IsAccurate", "RaceName", "EventDate", "Round", "FinishPosition", "Points"}),
+				    #"Changed Type2" = Table.TransformColumnTypes(#"Reordered Columns",{{"d_FreshTyre", Int64.Type}}),
+				    #"Duplicated Column1" = Table.DuplicateColumn(#"Changed Type2", "PitInTime", "PitInTime - Copy"),
+				    #"Changed Type3" = Table.TransformColumnTypes(#"Duplicated Column1",{{"PitInTime - Copy", type logical}}),
+				    #"Replaced Errors" = Table.ReplaceErrorValues(#"Changed Type3", {{"PitInTime - Copy", true}}),
+				    #"Replaced Value1" = Table.ReplaceValue(#"Replaced Errors",null,false,Replacer.ReplaceValue,{"PitInTime - Copy"}),
+				    #"Renamed Columns1" = Table.RenameColumns(#"Replaced Value1",{{"PitInTime - Copy", "d_InPit"}}),
+				    #"Replaced Value2" = Table.ReplaceValue(#"Renamed Columns1",null,0,Replacer.ReplaceValue,{"SpeedST"})
+				in
+				    #"Replaced Value2"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
