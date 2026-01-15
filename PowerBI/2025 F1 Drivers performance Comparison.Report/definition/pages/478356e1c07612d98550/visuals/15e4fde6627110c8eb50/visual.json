@@ -244,7 +244,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Average yop speed for each racer (Km/h)'"
+                  "Value": "'Average top speed for each racer (Km/h)'"
                 }
               }
             }
@@ -270,5 +270,66 @@
       ]
     },
     "drillFilterOtherVisuals": true
+  },
+  "filterConfig": {
+    "filters": [
+      {
+        "name": "073019338bb210b53727",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Norris_2025_development"
+                  }
+                },
+                "Property": "SpeedST"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "825cc0316e34a8b50301",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "verstappen_2025_development"
+                  }
+                },
+                "Property": "SpeedST"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      },
+      {
+        "name": "fdf187ff04a0be0daa15",
+        "field": {
+          "Aggregation": {
+            "Expression": {
+              "Column": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "Piastri_2025_development"
+                  }
+                },
+                "Property": "SpeedST"
+              }
+            },
+            "Function": 1
+          }
+        },
+        "type": "Advanced"
+      }
+    ]
   }
 }
