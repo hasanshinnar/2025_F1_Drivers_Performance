@@ -1,4 +1,4 @@
-# 🏎️ Formula 1 Driver Performance Analysis (2025)
+# Formula 1 Driver Performance Analysis (2025)
 
 [![Python](https://img.shields.io/badge/Python-3.8+-blue.svg)](https://www.python.org/)
 [![Power BI](https://img.shields.io/badge/Power%20BI-Dashboard-yellow.svg)](https://powerbi.microsoft.com/)
@@ -9,7 +9,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 
 - [Overview](#-overview)
 - [Key Features](#-key-features)
@@ -26,7 +26,7 @@
 
 ---
 
-## 🎯 Overview
+## Overview
 
 This project moves beyond traditional championship standings to provide an in-depth analysis of driver performance throughout the 2025 F1 season. By leveraging official FIA timing data and telemetry, the analysis explores:
 
@@ -40,18 +40,18 @@ The project demonstrates professional data engineering practices, from data extr
 
 ---
 
-## ✨ Key Features
+## Key Features
 
-- 📊 **Comprehensive Data Pipeline**: Automated data extraction using FastF1 API
-- 🔄 **ETL Process**: Clean, structured data transformation with pandas
-- 📈 **Advanced Analytics**: DAX measures and calculated columns in Power BI
-- 🎨 **Interactive Dashboards**: Professional visualizations with drill-through capabilities
-- 🏁 **Race-by-Race Analysis**: Lap times, positions, pit stops, and performance metrics
-- 🔍 **Driver Comparison**: Head-to-head performance across multiple dimensions
+- **Comprehensive Data Pipeline**: Automated data extraction using FastF1 API
+- **ETL Process**: Clean, structured data transformation with pandas
+- **Advanced Analytics**: DAX measures and calculated columns in Power BI
+- **Interactive Dashboards**: Professional visualizations with drill-through capabilities
+- **Race-by-Race Analysis**: Lap times, positions, pit stops, and performance metrics
+- **Driver Comparison**: Head-to-head performance across multiple dimensions
 
 ---
 
-## 📊 Data Source
+## Data Source
 
 Official Formula 1 timing and telemetry data accessed through the **FastF1 Python library**, including:
 
@@ -66,7 +66,7 @@ Official Formula 1 timing and telemetry data accessed through the **FastF1 Pytho
 
 ---
 
-## 🛠️ Tools & Technologies
+## Tools & Technologies
 
 <div align="center">
 
@@ -89,7 +89,7 @@ numpy==1.24+      # Numerical operations
 
 ---
 
-## 📈 Analysis & Insights
+## Analysis & Insights
 
 ### Analytical Dimensions
 
@@ -115,7 +115,7 @@ numpy==1.24+      # Numerical operations
 
 ---
 
-## 🎨 Visualizations
+## Visualizations
 
 ### Individual Driver Performance Dashboards
 
@@ -141,7 +141,7 @@ numpy==1.24+      # Numerical operations
 - Total Points: **394**
 - Average Finish Position: **4th**
 - Average Lap Time: **89.66s**
-- World Titles: **1** 🏆
+- World Titles: **1** 
 
 </details>
 
@@ -154,7 +154,7 @@ numpy==1.24+      # Numerical operations
 - Total Points: **389**
 - Average Finish Position: **4th**
 - Average Lap Time: **90.82s**
-- World Titles: **4** 🏆
+- World Titles: **4** 
 
 </details>
 
@@ -175,7 +175,7 @@ numpy==1.24+      # Numerical operations
 
 ---
 
-## 🚀 Installation
+## Installation
 
 ### Prerequisites
 
@@ -210,7 +210,7 @@ numpy==1.24+      # Numerical operations
 
 ---
 
-## 💻 Usage
+## Usage
 
 ### Data Extraction
 
@@ -236,7 +236,7 @@ This will:
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 f1-performance-analysis-2025/
@@ -266,13 +266,13 @@ f1-performance-analysis-2025/
 
 ---
 
-## 🔍 Key Findings
+## Key Findings
 
-### 🏆 Championship Battle Summary
+### Championship Battle Summary
 
 > **Lando Norris** leads in total points despite having the most DNFs, driven by consistent top 4 finishes and the highest average speed (273 km/h).
 
-### 📊 Performance Insights
+### Performance Insights
 
 | Driver | Strength | Area for Improvement |
 |--------|----------|---------------------|
@@ -280,8 +280,7 @@ f1-performance-analysis-2025/
 | **Max Verstappen** | Strong reliability, mid-season surge | Average lap time |
 | **Oscar Piastri** | Peak performance capability | Consistency across races |
 
-### 🎯 Detailed Analysis
-
+### Detailed Analysis 
 - **Max Verstappen** demonstrates strong reliability with only one retirement, showing a clear performance resurgence after Hungary, competing consistently in the top 3 until season's end while dominating most fastest laps.
 
 - **Oscar Piastri** displays the most volatility, capable of top performance in select races but lacking the consistency of his competitors throughout the season.
@@ -290,7 +289,7 @@ f1-performance-analysis-2025/
 
 ---
 
-## 📌 Notes
+## Notes
 
 - This project prioritizes **analytical accuracy** over purely aesthetic visuals
 - KPI cards were intentionally avoided in favor of **trend-based and distribution-based visualizations**
@@ -302,28 +301,14 @@ f1-performance-analysis-2025/
 ## 👤 Author
 
 **Hasan Shinnar**
-
-🎓 Computer Information Systems Graduate  
-💼 Aspiring Data Analyst / Data Engineer  
-🏎️ Formula 1 Motorsport Enthusiast
-
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/hasan-shinnar)
 [![GitHub](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white)](https://github.com/hasanshinnar)
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - [FastF1](https://github.com/theOehrly/Fast-F1) for providing access to F1 data
 - Formula 1 and FIA for official timing data
 - The F1 analytics community for inspiration
 
----
-
-<div align="center">
-
-### ⭐ If you found this project interesting, please consider giving it a star!
-
-**Built with ❤️ and ☕ by Hasan Shinnar**
-
-</div>
